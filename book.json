@@ -1,0 +1,10 @@
+{
+  "title": "Franka Developer Portal",
+  "description": "Central documentation hub for all Franka software projects",
+  "author": "Franka Robotics",
+  "language": "en",
+  "structure": {
+    "readme": "README.md",
+    "summary": "SUMMARY.md"
+  }
+}
