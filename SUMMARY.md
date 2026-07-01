@@ -22,3 +22,10 @@
   * [Overview](content/gamma/overview.md)
   * [User Guide](content/gamma/user-guide.md)
   * [Developer Guide](content/gamma/developer-guide.md)
+
+## FR3 Product Manual
+
+  * [Overview](content/delta/index.md)
+  * [Getting Started](content/delta/getting-started.md)
+  * [Operating Manual](content/delta/operating-manual.md)
+  * [Software Manual](content/delta/software-manual.md)
