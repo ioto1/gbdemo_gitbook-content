@@ -1,0 +1,36 @@
+# Deploy GitBook static site to server
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - content/**
+      - SUMMARY.md
+      - assets/**
+      - .github/workflows/deploy.yml
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Build HonKit
+        run: |
+          npm install
+          npx honkit build
+
+      - name: Deploy to server
+        uses: easingthemes/ssh-deploy@v5
+        with:
+          SSH_PRIVATE_KEY: ${{ secrets.SERVER_DEPLOY_KEY }}
+          ARGS: -rlgoDzvc --delete
+          REMOTE_HOST: 78.46.190.232
+          REMOTE_USER: root
+          SOURCE: _book/
+          TARGET: /var/www/gitbook/
