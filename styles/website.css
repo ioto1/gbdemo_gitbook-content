@@ -1,0 +1,360 @@
+/* ═══════════════════════════════════════════════════════════════════════════════
+   Franka Developer Portal — Dark Mode Theme
+   Based on MVP Requirements v220626
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+/* ── Google Fonts ──────────────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap');
+
+/* ── Design Tokens ─────────────────────────────────────────────────────────── */
+:root {
+    --franka-bg-default:   #1B2F36;
+    --franka-bg-paper:     #243A42;
+    --franka-divider:      rgba(88, 115, 128, 0.3);
+    --franka-text-primary: #FFFFFF;
+    --franka-text-secondary: #D4DBDC;
+    --franka-text-disabled: rgba(88, 115, 128, 0.4);
+    --franka-primary:      #D4DBDC;
+    --franka-primary-contrast: #1B2F36;
+    --franka-secondary:    #9C56E5;
+    --franka-info:         #567FC5;
+    --franka-success:      #75C28B;
+    --franka-warning:      #F0D46E;
+    --franka-error:        #C34040;
+    --franka-code-bg:      #111C21;
+    --franka-code-text:    #D4DBDC;
+    --franka-code-border:  rgba(212, 219, 220, 0.12);
+    --franka-radius:       10px;
+    --franka-font-body:    'Lato', -apple-system, sans-serif;
+    --franka-font-heading: 'Montserrat', -apple-system, sans-serif;
+    --franka-font-code:    'IBM Plex Mono', 'Source Code Pro', monospace;
+}
+
+/* ── Base — Book Body ─────────────────────────────────────────────────────── */
+.book {
+    background: var(--franka-bg-default) !important;
+    color: var(--franka-text-primary);
+    font-family: var(--franka-font-body);
+    font-weight: 400;
+}
+
+/* ── Sidebar (left navigation) ────────────────────────────────────────────── */
+.book-summary {
+    background: var(--franka-bg-paper) !important;
+    border-right: 1px solid var(--franka-divider) !important;
+    color: var(--franka-text-secondary);
+    font-family: var(--franka-font-body);
+}
+
+.book-summary ul.summary li a,
+.book-summary ul.summary li span {
+    color: var(--franka-text-secondary) !important;
+    font-family: var(--franka-font-body);
+    font-weight: 300;
+}
+
+.book-summary ul.summary li.active > a {
+    color: var(--franka-primary) !important;
+    background: rgba(212, 219, 220, 0.08) !important;
+    border-left: 3px solid var(--franka-secondary) !important;
+}
+
+.book-summary ul.summary li a:hover {
+    color: var(--franka-text-primary) !important;
+    background: rgba(212, 219, 220, 0.05) !important;
+}
+
+.book-summary ul.summary li.header {
+    color: var(--franka-info) !important;
+    font-family: var(--franka-font-heading);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.75rem;
+}
+
+/* Sidebar divider lines */
+.book-summary ul.summary li.divider {
+    background: var(--franka-divider) !important;
+}
+
+/* ── Search ───────────────────────────────────────────────────────────────── */
+#book-search-input {
+    background: var(--franka-bg-paper) !important;
+    border-bottom: 1px solid var(--franka-divider) !important;
+}
+
+#book-search-input input {
+    background: var(--franka-bg-default) !important;
+    color: var(--franka-text-primary) !important;
+    border: 1px solid var(--franka-divider) !important;
+    border-radius: var(--franka-radius) !important;
+    font-family: var(--franka-font-body);
+}
+
+#book-search-input input::placeholder {
+    color: var(--franka-text-disabled);
+}
+
+#book-search-results .search-results .has-results .search-results-item {
+    color: var(--franka-text-secondary);
+    border-bottom: 1px solid var(--franka-divider);
+}
+
+/* ── Content Area ─────────────────────────────────────────────────────────── */
+.book-body {
+    background: var(--franka-bg-default) !important;
+}
+
+.page-wrapper {
+    background: var(--franka-bg-default) !important;
+}
+
+.page-inner {
+    background: var(--franka-bg-default) !important;
+    color: var(--franka-text-primary);
+}
+
+/* ── Typography — Headings ────────────────────────────────────────────────── */
+.markdown-section h1 {
+    font-family: var(--franka-font-heading) !important;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    color: var(--franka-text-primary) !important;
+    font-size: 2rem;
+    letter-spacing: 0.02em;
+    border-bottom: 2px solid var(--franka-secondary);
+    padding-bottom: 0.5rem;
+    margin-top: 0;
+}
+
+.markdown-section h2 {
+    font-family: var(--franka-font-heading) !important;
+    font-weight: 600 !important;
+    color: var(--franka-primary) !important;
+    font-size: 1.5rem;
+    margin-top: 2rem;
+}
+
+.markdown-section h3 {
+    font-family: var(--franka-font-heading) !important;
+    font-weight: 400 !important;
+    color: var(--franka-text-secondary) !important;
+    font-size: 1.2rem;
+}
+
+.markdown-section h4,
+.markdown-section h5,
+.markdown-section h6 {
+    font-family: var(--franka-font-heading) !important;
+    color: var(--franka-text-secondary) !important;
+}
+
+/* ── Body Text ────────────────────────────────────────────────────────────── */
+.markdown-section p {
+    font-family: var(--franka-font-body);
+    font-weight: 400;
+    color: var(--franka-text-secondary);
+    line-height: 1.7;
+}
+
+.markdown-section strong {
+    color: var(--franka-text-primary);
+}
+
+/* ── Links ────────────────────────────────────────────────────────────────── */
+.markdown-section a {
+    color: var(--franka-info) !important;
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+.markdown-section a:hover {
+    color: var(--franka-secondary) !important;
+    text-decoration: underline;
+}
+
+/* ── Blockquotes ──────────────────────────────────────────────────────────── */
+.markdown-section blockquote {
+    background: var(--franka-bg-paper) !important;
+    border-left: 4px solid var(--franka-secondary) !important;
+    color: var(--franka-text-secondary) !important;
+    border-radius: 0 var(--franka-radius) var(--franka-radius) 0;
+    padding: 1rem 1.25rem;
+}
+
+/* ── Code ─────────────────────────────────────────────────────────────────── */
+.markdown-section code {
+    background: var(--franka-code-bg) !important;
+    color: var(--franka-code-text) !important;
+    border: 1px solid var(--franka-code-border);
+    border-radius: 4px;
+    font-family: var(--franka-font-code);
+    font-size: 0.875em;
+    padding: 0.15em 0.4em;
+}
+
+.markdown-section pre {
+    background: var(--franka-code-bg) !important;
+    border: 1px solid var(--franka-code-border);
+    border-radius: var(--franka-radius) !important;
+}
+
+.markdown-section pre code {
+    background: transparent !important;
+    border: none !important;
+    color: var(--franka-code-text) !important;
+    font-family: var(--franka-font-code);
+    font-size: 0.85rem;
+    padding: 0 !important;
+}
+
+/* ── Tables ───────────────────────────────────────────────────────────────── */
+.markdown-section table {
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: var(--franka-radius);
+    overflow: hidden;
+    border: 1px solid var(--franka-divider);
+}
+
+.markdown-section table th {
+    background: var(--franka-bg-paper) !important;
+    color: var(--franka-primary) !important;
+    font-family: var(--franka-font-heading);
+    font-weight: 600;
+    padding: 0.75rem 1rem;
+    border-bottom: 2px solid var(--franka-secondary) !important;
+}
+
+.markdown-section table td {
+    background: var(--franka-bg-default) !important;
+    color: var(--franka-text-secondary) !important;
+    padding: 0.6rem 1rem;
+    border-bottom: 1px solid var(--franka-divider);
+}
+
+.markdown-section table tr:last-child td {
+    border-bottom: none;
+}
+
+.markdown-section table tr:nth-child(even) td {
+    background: rgba(36, 58, 66, 0.4) !important;
+}
+
+/* ── Horizontal Rules ─────────────────────────────────────────────────────── */
+.markdown-section hr {
+    border: none;
+    border-top: 1px solid var(--franka-divider);
+    margin: 2rem 0;
+}
+
+/* ── Navigation (prev/next) ───────────────────────────────────────────────── */
+.page-inner .navigation {
+    border-top: 1px solid var(--franka-divider) !important;
+}
+
+.navigation-prev a,
+.navigation-next a {
+    color: var(--franka-info) !important;
+}
+
+.navigation-prev a:hover,
+.navigation-next a:hover {
+    color: var(--franka-secondary) !important;
+}
+
+/* ── Images ───────────────────────────────────────────────────────────────── */
+.markdown-section img {
+    border-radius: var(--franka-radius);
+    border: 1px solid var(--franka-divider);
+}
+
+/* ── Info/Warning/Success boxes (GitBook alerts plugin) ───────────────────── */
+.markdown-section .alert-info,
+.markdown-section .info {
+    background: rgba(86, 127, 197, 0.1);
+    border-left: 4px solid var(--franka-info);
+    color: var(--franka-text-secondary);
+}
+
+.markdown-section .alert-success,
+.markdown-section .success {
+    background: rgba(117, 194, 139, 0.1);
+    border-left: 4px solid var(--franka-success);
+    color: var(--franka-text-secondary);
+}
+
+.markdown-section .alert-warning,
+.markdown-section .warning {
+    background: rgba(240, 212, 110, 0.1);
+    border-left: 4px solid var(--franka-warning);
+    color: var(--franka-text-secondary);
+}
+
+.markdown-section .alert-danger,
+.markdown-section .error {
+    background: rgba(195, 64, 64, 0.1);
+    border-left: 4px solid var(--franka-error);
+    color: var(--franka-text-secondary);
+}
+
+/* ── Scrollbar ────────────────────────────────────────────────────────────── */
+.book-summary::-webkit-scrollbar,
+.page-wrapper::-webkit-scrollbar {
+    width: 6px;
+}
+
+.book-summary::-webkit-scrollbar-track,
+.page-wrapper::-webkit-scrollbar-track {
+    background: var(--franka-bg-default);
+}
+
+.book-summary::-webkit-scrollbar-thumb,
+.page-wrapper::-webkit-scrollbar-thumb {
+    background: var(--franka-divider);
+    border-radius: 3px;
+}
+
+.book-summary::-webkit-scrollbar-thumb:hover,
+.page-wrapper::-webkit-scrollbar-thumb:hover {
+    background: rgba(88, 115, 128, 0.5);
+}
+
+/* ── "Last updated" footer ────────────────────────────────────────────────── */
+.markdown-section p:last-child {
+    opacity: 0.6;
+    font-size: 0.8rem;
+    font-weight: 300;
+}
+
+/* ── Font Settings Panel ──────────────────────────────────────────────────── */
+.font-settings {
+    background: var(--franka-bg-paper) !important;
+    border: 1px solid var(--franka-divider) !important;
+    border-radius: var(--franka-radius);
+}
+
+.font-settings button {
+    color: var(--franka-text-secondary) !important;
+}
+
+.font-settings button:hover {
+    color: var(--franka-text-primary) !important;
+}
+
+/* ── Dropdown Menus ───────────────────────────────────────────────────────── */
+.dropdown-menu {
+    background: var(--franka-bg-paper) !important;
+    border: 1px solid var(--franka-divider) !important;
+    border-radius: var(--franka-radius);
+}
+
+.dropdown-menu .buttons button {
+    color: var(--franka-text-secondary) !important;
+}
+
+/* ── Smooth transitions ───────────────────────────────────────────────────── */
+.book * {
+    transition: background 0.2s ease, color 0.15s ease, border-color 0.2s ease;
+}
