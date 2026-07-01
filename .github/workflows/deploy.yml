@@ -26,7 +26,7 @@ jobs:
           npx honkit build
 
       - name: Deploy to server
-        uses: easingthemes/ssh-deploy@v5
+        uses: easingthemes/ssh-deploy@v6
         with:
           SSH_PRIVATE_KEY: ${{ secrets.SERVER_DEPLOY_KEY }}
           ARGS: -rlgoDzvc --delete
